@@ -1,0 +1,37 @@
+.navbar{
+    background-color:#2e2d2d;
+   
+}
+
+    
+
+#brand{
+
+    color:rgb(229, 145, 20);
+    font-size: 2em;
+    font-style:italic;
+
+   }
+
+
+#nav{
+
+    color:rgb(221, 227, 233);
+    font-size:1.4em;
+    font-style:italic ;
+    margin:0.7em;
+    position: relative;
+}
+
+#nav:hover{
+
+    color:rgb(229, 145, 20);
+    transition:200ms;
+   
+}
+
+#basic-navbar-nav{
+
+    text-align:center;
+}
+
