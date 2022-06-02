@@ -29,14 +29,13 @@ function Barra(){
                 </NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link id="nav" href="#home">
+              <Nav.Link id="nav" href="/QuienesSomos">
                 Quienes somos
               </Nav.Link>
               <Nav.Link id="nav" href="#link">
                 Contacto
               </Nav.Link>
               <Nav.Link id="nav" href="#link">
-                
                 <CartWidget/>
               </Nav.Link>
             </Nav>
