@@ -1,9 +1,9 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect,useState } from "react"
-import{getFetch} from '../helpers/getFetch'
+import{getFetch} from '../helpers/Itemlist'
 import { Card,ListGroup,ListGroupItem } from 'react-bootstrap';
- import './card.css'
+import './card.css'
 
 
 
@@ -34,7 +34,7 @@ import { Card,ListGroup,ListGroupItem } from 'react-bootstrap';
           <div className="card"  key={producto.id}>
             
             <Card   style={{ width: '18rem' }}>
-             <Card.Img variant="top" src={ producto.imagen} />
+             <Card.Img variant="top" src= "" />
              <Card.Body>
              <Card.Title></Card.Title>
              <Card.Text>
@@ -42,13 +42,13 @@ import { Card,ListGroup,ListGroupItem } from 'react-bootstrap';
               </Card.Text>
               </Card.Body>
              <ListGroup className="list-group-flush">
-             <ListGroupItem>{producto.descripcion}</ListGroupItem>
+             
              <ListGroupItem>Cantidad disponible:{producto.stock}</ListGroupItem>
              <ListGroupItem> Precio:{producto.precio}</ListGroupItem>
              </ListGroup>
              <Card.Body>
-             <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
+             <Card.Link href="#">Ver detalle</Card.Link>
+             
              </Card.Body>
             </Card>
 
