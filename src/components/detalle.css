@@ -1,0 +1,13 @@
+
+
+
+.detalle{
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+     border: none;
+
+     margin-top: 3em;
+  
+}

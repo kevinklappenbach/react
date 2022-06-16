@@ -1,12 +1,12 @@
 import {useState} from 'react';
 import  {Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
-
+import './btn-carrito.css'
 
 const InputCount =()=>{
 
     return (
-    <>
+    <div className='btn-carrito'>
         <Link to='/cart'>
            <Button
               
@@ -19,7 +19,7 @@ const InputCount =()=>{
          onClick={()=> console.log('ir al cart')}
          > Seguir comprando </Button>
          </Link> 
-    </>
+    </div>
     )
 }
 

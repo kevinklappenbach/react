@@ -2,10 +2,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect,useState } from "react"
 import{getFetchOne} from '../helpers/getFetch'
 import {useParams} from 'react-router-dom'
-import './card.css'
+import './detalle.css'
 import ItemCount from './itemCount'
 
-import Intercambiabilidad from './intercambiabilidad'
+
 
 
 
@@ -29,7 +29,7 @@ import Intercambiabilidad from './intercambiabilidad'
 
     return(
     
-    <div>
+    <div className='detalle'>
         {loading ?
 
         <h1>Cargando  detalle del producto...</h1>
@@ -37,7 +37,7 @@ import Intercambiabilidad from './intercambiabilidad'
 
          producto.map(producto =>
 
-          <div className="card"  key={producto.id}>
+          <div className="detalle"  key={producto.id}>
            
             <h1>{producto.id}</h1>
 
