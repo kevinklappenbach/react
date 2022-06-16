@@ -1,24 +1,26 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect,useState } from "react"
-import{getFetch} from '../helpers/itemdetail'
-
+import{getFetchOne} from '../helpers/getFetch'
+import {useParams} from 'react-router-dom'
 import './card.css'
 
 
 
   const ItemDetailContainer =()=>{
-   const [detail,setDetail]= useState([])
+   const [producto,setProducto]= useState({})
    const [loading, setLoading]= useState(true)
+   const {id}= useParams()
+   console.log(id)
   useEffect (()=>{
 
- getFetch()
+ getFetchOne()
     .then ((resp)=>{
-        setDetail(resp)
+        setProducto(resp)
     })
     .catch(err =>console.log(err))
     .finally(()=>setLoading(false))
  } , [])
-  console.log(detail)
+  console.log(producto)
 
     return(
     
@@ -28,14 +30,15 @@ import './card.css'
         <h1>Cargando  detalle del producto...</h1>
         :
 
-         detail.map(detail =>
+         producto.map(producto =>
 
-          <div className="card"  key={detail.id}>
+          <div className="card"  key={producto.id}>
             
-            <h1>{detail.id}</h1>
+            <h1>{producto.id}</h1>
 
-            <h2>{detail.descripcion}</h2>
-             <h3>{detail.precio}</h3>
+            <h2>{producto.descripcion}</h2>
+             <h3>{producto.precio}</h3>
+             <h3>{producto.categoria} </h3>
 
           </div>)
         }
