@@ -3,6 +3,9 @@ import { useEffect,useState } from "react"
 import{getFetchOne} from '../helpers/getFetch'
 import {useParams} from 'react-router-dom'
 import './card.css'
+import ItemCount from './itemCount'
+
+import Intercambiabilidad from './intercambiabilidad'
 
 
 
@@ -11,6 +14,8 @@ import './card.css'
    const [loading, setLoading]= useState(true)
    const {id}= useParams()
    console.log(id)
+
+
   useEffect (()=>{
 
  getFetchOne()
@@ -33,16 +38,22 @@ import './card.css'
          producto.map(producto =>
 
           <div className="card"  key={producto.id}>
-            
+           
             <h1>{producto.id}</h1>
 
             <h2>{producto.descripcion}</h2>
              <h3>{producto.precio}</h3>
              <h3>{producto.categoria} </h3>
+              <ItemCount/>
+              
+             
 
           </div>)
+          
         }
- </div>
+       
+              
+     </div>
     )
     }
  export default ItemDetailContainer;

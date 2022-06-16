@@ -1,16 +1,13 @@
 import { useState } from "react"
 import { Button } from "react-bootstrap"
+import Intercambiabilidad from "./intercambiabilidad"
 
-function ItemCount({ stock, onAdd }) {
+ function ItemCount({ stock, onAdd }) {
 	const [count, setCount] = useState(1)
 
     const product= 10
 
-    const mostrarAlerta=()=>{
-
-        alert('agregaste productos al carrito')
     
-    }
    
  
 
@@ -24,7 +21,7 @@ function ItemCount({ stock, onAdd }) {
 				className="btn-lg btn-light btn-danger bi bi-plus-circle-fill"
 				disabled={count > product - 1}>agregar</Button>
 			<div className="text-center">
-				<Button onClick={()=> mostrarAlerta( )}className="btn-success"disabled={stock === 0}>Agregar al Carrito</Button>
+				<Button className="btn-success" disabled={stock === 0}> <Intercambiabilidad/></Button>
                 <button type="button" className="btn btn-outline-dark btn-sm m-1" disabled>{product} cantidades disponibles</button>
 			</div>
 		</div>
@@ -32,7 +29,9 @@ function ItemCount({ stock, onAdd }) {
     
 }
 
+export default ItemCount;
 
 
-export default ItemCount
+
+
 
