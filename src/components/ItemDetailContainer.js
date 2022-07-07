@@ -1,19 +1,26 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import { useEffect,useState } from "react"
+import { useEffect,useState,useContext } from "react"
 import{getFetchOne} from '../helpers/getFetch'
 import {useParams} from 'react-router-dom'
 import './detalle.css'
 import ItemCount from './itemCount'
-
+import {CartContext} from './contexts/cartContext'
 
 
 
 
   const ItemDetailContainer =()=>{
+    const {cart,addToCart}= useContext(CartContext)
+
+    const onAdd=(cant)=>{
+      console.log(cant)
+      addToCart({...producto,cantidad: cant})
+    }
    const [producto,setProducto]= useState({})
    const [loading, setLoading]= useState(true)
    const {id}= useParams()
    console.log(id)
+   console.log(cart)
 
 
   useEffect (()=>{
@@ -27,6 +34,7 @@ import ItemCount from './itemCount'
  } , [])
   console.log(producto)
 
+  
     return(
     
     <div className='detalle'>
@@ -44,7 +52,7 @@ import ItemCount from './itemCount'
             <h2>{producto.descripcion}</h2>
              <h3>{producto.precio}</h3>
              <h3>{producto.categoria} </h3>
-              <ItemCount/>
+              <ItemCount initial={1} stock={10} onAdd={onAdd}/>
               
              
 
